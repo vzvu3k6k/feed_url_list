@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }}</title>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    {{ content }}
+    <footer class="container">
+      Generated from <a href="{{ site.repo_file_url }}{{ page.path }}">{{ site.repo_file_url }}{{ page.path }}</a>
+    </footer>
+    <style>
+      body {
+        margin-left: 3rem;
+      }
+
+      h1, h2 {
+        margin-left: -2rem;
+      }
+
+      a {
+        color: #133CAC;
+      }
+
+      footer {
+        margin-left: -2rem;
+        padding-top: 1em;
+        color: #666;
+      }
+
+      footer a {
+        color: #444;
+      }
+    </style>
+  </body>
+</html>

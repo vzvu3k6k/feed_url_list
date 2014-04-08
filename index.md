@@ -1,3 +1,8 @@
+---
+layout: default
+title: 各サービスのフィードのURL
+---
+
 # 各サービスのフィードのURL
 
 フィードは存在するのに、何らかの理由でRSSのautodiscoveryが設定されていないときなどに。
@@ -21,7 +26,3 @@
 ## [はてなグループ](http://g.hatena.ne.jp/)のメンバー全員の日記
 
 公式には個別の日記のフィードしか提供されていない。[Pipes: merge hatena group](http://pipes.yahoo.com/pipes/pipe.info?_id=TssmX7bb2xGYLar_l7okhQ)を使うとよい。
-
----
-
-[https://github.com/vzvu3k6k/feed_url_list/](https://github.com/vzvu3k6k/feed_url_list/)
