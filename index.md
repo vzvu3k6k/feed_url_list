@@ -32,9 +32,19 @@ title: フィードのURLリスト
 
 たとえば、[Emacs Redux](http://emacsredux.com/)の場合には、ブログ全体のコメントのフィードは[http://emacsredux.disqus.com/latest.rss](http://emacsredux.disqus.com/latest.rss)で、[which-function-mode - Emacs Redux](http://emacsredux.com/blog/2014/04/05/which-function-mode/)という記事のコメントのフィードは[http://emacsredux.disqus.com/which_function_mode_emacs_redux/latest.rss](http://emacsredux.disqus.com/which_function_mode_emacs_redux/latest.rss)となる。
 
-`disqus_shortname`は多くの場合`window.disqus_shortname || [].map.call(document.querySelectorAll('iframe[src^="http://disqus.com/embed/comments/"]'), function(i){return i.src.match(/f=(\w+)/)[1]})`で取得できる。
+Disqusのコメント欄が表示されているページで以下のスクリプトを実行すると、うまくいけばフィードのURLが得られる。ただし`thread_slug`が正確に取得できないことがある。
 
-`thread_slug`は、[`disqus_title`](http://help.disqus.com/customer/portal/articles/472098-javascript-configuration-variables#disqus_identifier)というパラメータで決まっているらしい。`window.disqus_title || document.title.replace(/(-|\s)+/g, "_").toLowerCase().replace(/[^a-z0-9_]/g, "").replace(/_{2,}/, "_")`でたいてい取得できるはず。ダメだったらDisqusのアカウントを取ってApplicationを作ってAPI ConsoleからThreadのlistを取得して確認する。
+```javascript
+(function(){
+  var disqus_shortname = window.disqus_shortname || [].map.call(document.querySelectorAll('iframe[src^="http://disqus.com/embed/comments/"]'), function(i){return i.src.match(/f=(\w+)/)[1]});
+  var thread_slug = window.disqus_title || document.title.replace(/(-|\s)+/g, '_').toLowerCase().replace(/[^a-z0-9_]/g, '').replace(/_{2,}/, '_');
+  alert('http://{disqus_shortname}.disqus.com/latest.rss\nhttp://{disqus_shortname}.disqus.com/{thread_slug}/latest.rss'.replace(/{[^}]+}/g, function(tag){return eval(tag)});
+})();
+```
+
+`thread_slug`は、[`disqus_title`](http://help.disqus.com/customer/portal/articles/472098-javascript-configuration-variables#disqus_identifier)というパラメータが与えられている場合にはそれが使われるようだ。`disqus_title`が指定されていない場合には`document.title`からslugが自動的に作成されるらしい。異なるページで同じslugになった場合には`slug_2`のように末尾に連番を振って重複が回避される。slugの生成時には英数字と一部の記号しか使われないため、タイトルに日本語が使われていると頻繁に重複が起きる。
+
+また、DisqusのAPIからフィードのURLを取得することもできる。ページのURLからthreadを直接取得する方法はないので、[listThreadsを叩く](https://disqus.com/api/console/#!/?method=GET&endpoint=forums%2FlistThreads&since=2014-01-01T00%3A00%3A00Z&forum=foo)などの方法を取らなければならない。
 
 ## Wordpress, ライブドアブログ, Blogger, FC2ブログ, アメーバブログ, seesaaブログ, Yahoo!ブログ
 
