@@ -19,6 +19,10 @@ title: フィードのURLリスト
 
 `/feed.xml`
 
+## [Jekyll-Bootstrap](http://jekyllbootstrap.com/)
+
+`/atom.xml`, `/rss.xml`
+
 ## [はてなグループ](http://g.hatena.ne.jp/)のメンバー全員の日記
 
 公式には個別の日記のフィードしか提供されていない。
