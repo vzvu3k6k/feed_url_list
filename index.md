@@ -50,6 +50,18 @@ Disqusのコメント欄が表示されているページで以下のスクリ�
 
 また、DisqusのAPIからフィードのURLを取得することもできる。ページのURLからthreadを直接取得する方法はないので、[listThreadsを叩く](https://disqus.com/api/console/#!/?method=GET&endpoint=forums%2FlistThreads&since=2014-01-01T00%3A00%3A00Z&forum=foo)などの方法を取らなければならない。
 
-## Wordpress, ライブドアブログ, Blogger, FC2ブログ, アメーバブログ, seesaaブログ, Yahoo!ブログ
+## Blogger
+
+[Blogger のフィード URL - Blogger ヘルプ](https://support.google.com/blogger/answer/97933?hl=ja)
+
+すべての記事のフィード、すべてのコメントのフィード、特定のラベルの記事のフィード、特定の記事のコメントのフィードが提供されている。
+
+管理者がフィードを無効にしていることもある（[サイトのフィード設定を変更する - Blogger ヘルプ](https://support.google.com/blogger/answer/42662?hl=ja)）。
+
+## Wordpress, ライブドアブログ, FC2ブログ, アメーバブログ, seesaaブログ, Yahoo!ブログ
 
 [【RSSフィードのURL】確認方法まとめ。Wordpress・ライブドア・FC2・Yahooブログ・その他。 : 僕の私の備忘録](http://blog.livedoor.jp/net_scope-diary/archives/7295120.html)
+
+## [Trending repositories on GitHub](https://github.com/trending)
+
+[GitHub unofficial trending projects RSS feeds](http://ghtrendingrss.appspot.com/)
