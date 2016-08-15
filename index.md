@@ -11,10 +11,6 @@ title: フィードのURLリスト
 
 `http://{blog_name}.tumblr.com/rss/`
 
-## [Gist](https://gist.github.com/)
-
-`https://gist.github.com/{user_name}.atom`
-
 ## [Jekyll](http://jekyllrb.com/), [middleman-blog](https://github.com/middleman/middleman-blog/)
 
 `/feed.xml`
