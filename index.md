@@ -65,3 +65,14 @@ Disqusのコメント欄が表示されているページで以下のスクリ�
 ## [Trending repositories on GitHub](https://github.com/trending)
 
 [GitHub unofficial trending projects RSS feeds](http://ghtrendingrss.appspot.com/)
+
+## SoundCloud
+
+ユーザーの投稿した音声やプレイリストは以下のURLでpodcastとして配信されている。（ユーザーの設定によってはフィードに登録されていないこともある。）
+
+- `http://feeds.soundcloud.com/users/soundcloud:users:{user_id}/sounds.rss`
+  - user_idはユーザーページで`document.querySelector('[property="twitter:app:url:googleplay"]').content.replace('soundcloud://users:', '')`を実行すると取得できる。
+- `http://feeds.soundcloud.com/playlists/soundcloud:playlists:{playlist_id}/sounds.rss`
+  - playlist_idはプレイリストページで`document.querySelector('[property="twitter:app:url:googleplay"]').content.replace('soundcloud://playlists:', '')`を実行すると取得できる。
+
+<http://getrssfeed.com/>にページのURLを入力するとpodcastのURLを返してくれる。
