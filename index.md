@@ -23,12 +23,6 @@ title: フィードのURLリスト
 
 `/atom.xml`, `/rss.xml`
 
-## [はてなグループ](http://g.hatena.ne.jp/)のメンバー全員の日記
-
-公式には個別の日記のフィードしか提供されていない。
-
-[Pipes: merge hatena group](http://pipes.yahoo.com/pipes/pipe.info?_id=TssmX7bb2xGYLar_l7okhQ)を使うとよい。
-
 ## [Disqus](https://disqus.com/)
 
 * フォーラム全体のフィード - `http://{disqus_shortname}.disqus.com/latest.rss`
